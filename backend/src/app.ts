@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import routes from "./routes";
 import connectDB from "./config/database";
+import requireAuth from "./middleware/requireAuth";
 
 dotenv.config();
 
@@ -16,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 connectDB().then((res) => {
   console.log(res);
 });
+
+app.use(requireAuth);
 
 // API routes
 app.use("/api", routes);

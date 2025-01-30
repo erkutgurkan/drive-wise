@@ -3,7 +3,7 @@
     "concurrently": "^9.1.2"
   },
   "scripts": {
-    "client": "cd frontend && npm run start",
+    "client": "cd frontend && npm run dev",
     "server": "cd backend && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   }
